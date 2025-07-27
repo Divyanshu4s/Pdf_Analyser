@@ -14,7 +14,7 @@ class PDFAnalyzer:
    def __init__(self, model_path="./model"):
     self.tokenizer = AutoTokenizer.from_pretrained(model_path, local_files_only=True)  
     self.model = AutoModel.from_pretrained(model_path, local_files_only=True) 
-        self.model.eval()  # Disable dropout for inference
+    self.model.eval()  # Disable dropout for inference
         
     def mean_pooling(self, model_output, attention_mask):
         token_embeddings = model_output[0]
